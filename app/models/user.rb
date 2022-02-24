@@ -42,7 +42,7 @@ class User < ApplicationRecord
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
   end
   
-  def self.looks(search, word)
+  def self.looks(word, search)
     if search == "perfect_match"
       @user = User.where("name LIKE?", "#{word}")
     elsif search == "forward_match"
